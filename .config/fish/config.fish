@@ -6,6 +6,7 @@ if status is-interactive
     set -x PAGER less
     set -x TERMINAL alacritty
     set -x TERM alacritty
+    set -gx SHELL ~/usr/bin/fish
 
     alias hx "helix"
     alias .. "cd .."

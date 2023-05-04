@@ -12,7 +12,7 @@ if status is-interactive
     alias .. "cd .."
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-    eval (zellij setup --generate-auto-start fish | string collect)
+    #    eval (zellij setup --generate-auto-start fish | string collect)
 
     starship init fish | source
 end

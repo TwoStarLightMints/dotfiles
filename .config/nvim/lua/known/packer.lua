@@ -1,11 +1,11 @@
 return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
-    
+
     use "folke/tokyonight.nvim"
-    
+
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
-    
+
     use "neovim/nvim-lspconfig"
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lsp"
@@ -14,4 +14,6 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-cmdline"    
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
+
+    use "windwp/nvim-autopairs"
 end)

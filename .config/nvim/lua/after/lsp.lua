@@ -14,8 +14,8 @@ local cmp = require'cmp'
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ["<Up>"] = cmp.mapping.select_prev_item(),
-      ["<Down>"] = cmp.mapping.select_next_item(),
+      ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+      ["<Tab>"] = cmp.mapping.select_next_item(),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -56,6 +56,20 @@ local cmp = require'cmp'
   })
 
   local mslp = require("mason-lspconfig")
+
+  require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+  })
+
+  mslp.setup {
+      ensure_installed = {"lua_ls", "rust_analyzer", "pyright"}
+  }
 
   mslp.setup_handlers {
       function (server)

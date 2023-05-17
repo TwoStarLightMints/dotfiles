@@ -16,6 +16,7 @@ hidden = false
 
 [editor.statusline]
 right = ["total-line-numbers", "diagnostics", "selections", "position", "file-encoding"]
+left = ["mode", "file-base-name", "spinner"]
 
 [keys.normal]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]

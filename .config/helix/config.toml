@@ -5,6 +5,7 @@ line-number = "relative"
 true-color = true
 mouse = false
 bufferline = "always"
+cursorline = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,6 +18,9 @@ hidden = false
 [editor.statusline]
 right = ["total-line-numbers", "diagnostics", "selections", "position", "file-encoding"]
 left = ["mode", "file-base-name", "spinner"]
+
+[editor.lsp]
+display-inlay-hints = true
 
 [keys.normal]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]

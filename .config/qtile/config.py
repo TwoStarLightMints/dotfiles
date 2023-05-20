@@ -31,6 +31,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "alacritty"
+browser = "chromium"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -71,6 +72,9 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
+
+    # Custom binds to open frequently used programs
+    Key([mod], "b", lazy.spawn(browser), desc="Open browser")
 ]
 
 groups = [Group(i) for i in "123456789"]

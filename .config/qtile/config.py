@@ -74,12 +74,18 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
 
     # Custom binds to open frequently used programs
-    Key([mod], "b", lazy.spawn(browser), desc="Open browser")
 ]
 
-groups = [Group(i) for i in "123456789"]
+# groups is a specific variable that is used in qtile's config
+group_programming = Group("Programming", spawn=["alacritty"])
+keys.extend([Key([mod], "p", lazy.group[group_programming.name].toscreen())])
+group_browser = Group("Browser", spawn=["chromium"])
+keys.extend([Key([mod], "b", lazy.group[group_browser.name].toscreen())])
 
-for i in groups:
+groups = [group_programming, group_browser]
+groups.extend([Group(i) for i in "123456789"])
+
+for i in groups[2:]:
     keys.extend(
         [
             # mod1 + letter of group = switch to group
@@ -96,10 +102,6 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 

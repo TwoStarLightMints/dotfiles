@@ -79,8 +79,10 @@ keys = [
 # groups is a specific variable that is used in qtile's config
 group_programming = Group("Programming", spawn=["alacritty"])
 keys.extend([Key([mod], "p", lazy.group[group_programming.name].toscreen())])
+keys.extend([Key([mod, "shift"], "p", lazy.window.togroup(group_programming.name, switch_group=True))])
 group_browser = Group("Browser", spawn=["chromium"])
 keys.extend([Key([mod], "b", lazy.group[group_browser.name].toscreen())])
+keys.extend([Key([mod, "shift"], "b", lazy.window.togroup(group_browser.name, switch_group=True))])
 
 groups = [group_programming, group_browser]
 groups.extend([Group(i) for i in "123456789"])

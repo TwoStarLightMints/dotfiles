@@ -10,7 +10,8 @@ if status is-interactive
 
     alias hx "helix"
     alias .. "cd .."
-    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+    alias gclone "git clone"
 
     eval (zellij setup --generate-auto-start fish | string collect)
 

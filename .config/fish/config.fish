@@ -9,9 +9,15 @@ if status is-interactive
     set -gx SHELL ~/usr/bin/fish
 
     abbr hx helix
+
     abbr .. "cd .."
+
     abbr config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-    abbr gclone "git clone"
+
+    abbr gitcl "git clone"
+    abbr gita "git add"
+    abbr gitco "git commit -m"
+    abbr gitp "git push origin main"
 
     eval (zellij setup --generate-auto-start fish | string collect)
 

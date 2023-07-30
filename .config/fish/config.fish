@@ -17,6 +17,7 @@ if status is-interactive
     abbr gitcl "git clone"
     abbr gita "git add"
     abbr gitco "git commit -m"
+    abbr gits "git status"
     abbr gitp "git push origin main"
 
     eval (zellij setup --generate-auto-start fish | string collect)

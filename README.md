@@ -5,3 +5,4 @@ The link for when I forget what I used to do this in the first place, [click her
 
 ## TODO:
 - [ ] Create abbreviation for updating system and foreign package manager packages
+- [ ] Update helix config

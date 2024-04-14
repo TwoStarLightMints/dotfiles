@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "alacritty"
-browser = "chromium"
+browser = "firefox"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -80,7 +80,7 @@ keys = [
 group_programming = Group("Programming", spawn=["alacritty"])
 keys.extend([Key([mod], "p", lazy.group[group_programming.name].toscreen())])
 keys.extend([Key([mod, "shift"], "p", lazy.window.togroup(group_programming.name, switch_group=True))])
-group_browser = Group("Browser", spawn=["chromium"])
+group_browser = Group("Browser", spawn=[browser])
 keys.extend([Key([mod], "b", lazy.group[group_browser.name].toscreen())])
 keys.extend([Key([mod, "shift"], "b", lazy.window.togroup(group_browser.name, switch_group=True))])
 

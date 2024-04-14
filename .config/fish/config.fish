@@ -18,9 +18,8 @@ if status is-interactive
     abbr gita "git add"
     abbr gitco "git commit -m"
     abbr gits "git status"
-    abbr gitp "git push origin main"
-
-    eval (zellij setup --generate-auto-start fish | string collect)
+    abbr gitps "git push origin main"
+    abbr gitpu "git pull origin main"
 
     starship init fish | source
 end

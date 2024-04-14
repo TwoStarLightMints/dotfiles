@@ -22,13 +22,9 @@ left = ["mode", "file-base-name", "spinner"]
 [editor.lsp]
 display-inlay-hints = true
 
-[editor.soft-wrap]
-enable = true
-
 [keys.normal]
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-C-r = [":run-shell-command cargo run"]
 A-k = ["add_newline_above", "move_line_up"]
 A-j = ["add_newline_below", "move_line_down"]
 C-n = ["goto_next_buffer"]

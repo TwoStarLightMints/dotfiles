@@ -18,8 +18,8 @@ if status is-interactive
     abbr gita "git add"
     abbr gitco "git commit -m"
     abbr gits "git status"
-    abbr gitps "git push origin main"
-    abbr gitpu "git pull origin main"
+    abbr gitps "git push origin"
+    abbr gitpu "git pull origin"
 
     starship init fish | source
 end

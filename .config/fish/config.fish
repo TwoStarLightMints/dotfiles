@@ -13,6 +13,10 @@ if status is-interactive
     abbr .. "cd .."
 
     abbr config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+    abbr configa "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add"
+    abbr configm "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m"
+    abbr configpsm "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push origin main"
+    abbr configpum "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME pull origin main"
 
     abbr gitcl "git clone"
     abbr gita "git add"

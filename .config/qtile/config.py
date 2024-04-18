@@ -145,7 +145,8 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.TextBox("Known config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                widget.CPU(),
+                widget.CPUGraph(),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),

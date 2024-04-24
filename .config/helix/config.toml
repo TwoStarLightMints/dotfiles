@@ -29,6 +29,8 @@ A-k = ["add_newline_above", "move_line_up"]
 A-j = ["add_newline_below", "move_line_down"]
 C-n = ["goto_next_buffer"]
 C-p = ["goto_previous_buffer"]
+C-K = ["scroll_up"]
+C-J = ["scroll_down"]
 
 [keys.insert]
 up = "no_op"

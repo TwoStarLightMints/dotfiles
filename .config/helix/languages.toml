@@ -9,3 +9,9 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "    " }
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+[[language]]
+name = "python"
+language-servers = [ "ruff-lsp" ]

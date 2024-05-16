@@ -7,6 +7,20 @@ if status is-interactive
     set -x TERMINAL alacritty
     set -x TERM alacritty
     set -gx SHELL ~/usr/bin/fish
+    set -x ZELLIJ_AUTO_ATTACH true
+
+
+    if not set -q ZELLIJ
+        if test "$ZELLIJ_AUTO_ATTACH" = true
+            zellij attach main
+        else
+            zellij
+        end
+
+        if test "$ZELLIJ_AUTO_EXIT" = true
+            kill $fish_pid
+        end
+    end
 
     abbr hx helix
 

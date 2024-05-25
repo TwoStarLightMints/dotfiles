@@ -27,7 +27,6 @@
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "alacritty"
@@ -80,14 +79,17 @@ keys = [
 group_programming = Group("Programming", spawn=["alacritty"])
 keys.extend([Key([mod], "p", lazy.group[group_programming.name].toscreen())])
 keys.extend([Key([mod, "shift"], "p", lazy.window.togroup(group_programming.name, switch_group=True))])
+group_code = Group("Code")
+keys.extend([Key([mod], "c", lazy.group[group_code.name].toscreen())])
+keys.extend([Key([mod, "shift"], "c", lazy.window.togroup(group_code.name, switch_group=True))])
 group_browser = Group("Browser", spawn=[browser])
 keys.extend([Key([mod], "b", lazy.group[group_browser.name].toscreen())])
 keys.extend([Key([mod, "shift"], "b", lazy.window.togroup(group_browser.name, switch_group=True))])
 
-groups = [group_programming, group_browser]
+groups = [group_programming, group_browser, group_code]
 groups.extend([Group(i) for i in "123456789"])
 
-for i in groups[2:]:
+for i in groups[3:]:
     keys.extend(
         [
             # mod1 + letter of group = switch to group

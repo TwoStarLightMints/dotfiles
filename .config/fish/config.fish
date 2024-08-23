@@ -28,6 +28,11 @@ if status is-interactive
     abbr ... "cd ../.."
     abbr cdprog "cd ~/Documents/Programming"
 
+    function cdmkdir
+        mkdir $argv
+        cd $argv
+    end
+
     abbr gitinit "git init -b main"
     abbr config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
     abbr configa "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add"

@@ -24,9 +24,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+
+@hook.subscribe.startup
+def autostart():
+    import os
+    import subprocess
+
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
 
 mod = "mod4"
 terminal = "alacritty"
@@ -151,7 +159,7 @@ screens = [
                 widget.CPUGraph(),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Systray(),
+                widget.Systray(icon_size=20),
                 widget.Clock(format="%Y/%m/%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],

@@ -6,7 +6,7 @@ if status is-interactive
     set -x PAGER less
     set -x TERMINAL alacritty
     set -x TERM alacritty
-    set -gx SHELL ~/usr/bin/fish
+    set -gx SHELL /usr/bin/fish
     set -x ZELLIJ_AUTO_ATTACH true
 
 
